@@ -1,3 +1,5 @@
+"""Module contenant les définitions de schéma SQLAlchemy."""
+
 from sqlalchemy import Column, ForeignKey, Integer, String, Date
 from sqlalchemy.orm import relationship
 from .sqlite import Base
