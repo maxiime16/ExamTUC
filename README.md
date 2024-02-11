@@ -41,24 +41,24 @@ Groupe de 3
 > Note minimal de 8/10
 
 > Pylint au début du projet:
-    - Module TP_tuc_examen.app.models: C0114, R0903
-    - Module TP_tuc_examen.app.actions: C0114
-    - Module TP_tuc_examen.app.sqlite: C0304, C0114, C0103
-    - Module TP_tuc_examen.app.schemas: C0114, C0115, R0903
-    - Module TP_tuc_examen.app.routers.pokemons: C0114, E0401
-    - Module TP_tuc_examen.app.routers.trainers: C0114, E0401
-    - Module TP_tuc_examen.app.routers.items: C0114, E0401
-    - Module TP_tuc_examen.app.utils.pokeapi: C0301, C0114, C0103, W0613
-    - Module TP_tuc_examen.app.utils.utils: C0114, E0401
+ - Module TP_tuc_examen.app.models: C0114, R0903
+ - Module TP_tuc_examen.app.actions: C0114
+ - Module TP_tuc_examen.app.sqlite: C0304, C0114, C0103
+ - Module TP_tuc_examen.app.schemas: C0114, C0115, R0903
+ - Module TP_tuc_examen.app.routers.pokemons: C0114, E0401
+ - Module TP_tuc_examen.app.routers.trainers: C0114, E0401
+ - Module TP_tuc_examen.app.routers.items: C0114, E0401
+ - Module TP_tuc_examen.app.utils.pokeapi: C0301, C0114, C0103, W0613
+ - Module TP_tuc_examen.app.utils.utils: C0114, E0401
 
 > Ajouts fait:
-    - C0114 | C0115 | C0116: ajouts de docstring aux modules, class et fonctions
-    - R0903: ajouts de methodes (__repr__ ; to_dict ...)
-    - C0103: Mettre ma variable en majuscules
-    - C0304: Derniere ligne manquante
-    - E0401: Changement du chemin d'importation
-    - C0301: ligne trop longue
-    - C0103: Changement en variable conforme
+ - C0114 | C0115 | C0116: ajouts de docstring aux modules, class et fonctions
+ - R0903: ajouts de methodes (__repr__ ; to_dict ...)
+ - C0103: Mettre ma variable en majuscules
+ - C0304: Derniere ligne manquante
+ - E0401: Changement du chemin d'importation
+ - C0301: ligne trop longue
+ - C0103: Changement en variable conforme
 
 Avancement: 🟢 note > 9.5
 
