@@ -60,7 +60,7 @@ Groupe de 3
     - C0301: ligne trop longue
     - C0103: Changement en variable conforme
 
-Avancement: 🔴
+Avancement: 🟢 note > 9.5
 
 ### Unittest
 Groupe de 3
