@@ -41,59 +41,24 @@ Groupe de 3
 > Note minimal de 8/10
 
 > Pylint au début du projet:
+    - Module TP_tuc_examen.app.models: C0114, R0903
+    - Module TP_tuc_examen.app.actions: C0114
+    - Module TP_tuc_examen.app.sqlite: C0304, C0114, C0103
+    - Module TP_tuc_examen.app.schemas: C0114, C0115, R0903
+    - Module TP_tuc_examen.app.routers.pokemons: C0114, E0401
+    - Module TP_tuc_examen.app.routers.trainers: C0114, E0401
+    - Module TP_tuc_examen.app.routers.items: C0114, E0401
+    - Module TP_tuc_examen.app.utils.pokeapi: C0301, C0114, C0103, W0613
+    - Module TP_tuc_examen.app.utils.utils: C0114, E0401
 
-************* Module TP_tuc_examen.app.models
-app/models.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/models.py:6:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-app/models.py:27:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-app/models.py:50:0: R0903: Too few public methods (0/2) (too-few-public-methods)
-************* Module TP_tuc_examen.app.actions
-app/actions.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-************* Module TP_tuc_examen.app.sqlite
-app/sqlite.py:9:0: C0304: Final newline missing (missing-final-newline)
-app/sqlite.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/sqlite.py:5:0: C0103: Constant name "sqlite_url" doesn't conform to UPPER_CASE naming style (invalid-name)
-************* Module TP_tuc_examen.app.schemas
-app/schemas.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/schemas.py:8:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:12:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:15:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:19:4: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:19:4: R0903: Too few public methods (0/2) (too-few-public-methods)
-app/schemas.py:25:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:29:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:32:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:37:4: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:37:4: R0903: Too few public methods (0/2) (too-few-public-methods)
-app/schemas.py:42:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:46:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:49:0: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:54:4: C0115: Missing class docstring (missing-class-docstring)
-app/schemas.py:54:4: R0903: Too few public methods (0/2) (too-few-public-methods)
-************* Module TP_tuc_examen.app.routers.pokemons
-app/routers/pokemons.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/pokemons.py:4:0: E0401: Unable to import 'app' (import-error)
-app/routers/pokemons.py:5:0: E0401: Unable to import 'app.utils.utils' (import-error)
-************* Module TP_tuc_examen.app.routers.trainers
-app/routers/trainers.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/trainers.py:4:0: E0401: Unable to import 'app.utils.utils' (import-error)
-app/routers/trainers.py:5:0: E0401: Unable to import 'app' (import-error)
-************* Module TP_tuc_examen.app.routers.items
-app/routers/items.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/routers/items.py:4:0: E0401: Unable to import 'app.utils.utils' (import-error)
-app/routers/items.py:5:0: E0401: Unable to import 'app' (import-error)
-************* Module TP_tuc_examen.app.utils.pokeapi
-app/utils/pokeapi.py:38:0: C0301: Line too long (110/100) (line-too-long)
-app/utils/pokeapi.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/utils/pokeapi.py:3:0: C0103: Constant name "base_url" doesn't conform to UPPER_CASE naming style (invalid-name)
-app/utils/pokeapi.py:35:4: C0103: Variable name "premierPokemon" doesn't conform to snake_case naming style (invalid-name)
-app/utils/pokeapi.py:36:4: C0103: Variable name "secondPokemon" doesn't conform to snake_case naming style (invalid-name)
-app/utils/pokeapi.py:41:25: W0613: Unused argument 'first_pokemon_stats' (unused-argument)
-app/utils/pokeapi.py:41:46: W0613: Unused argument 'second_pokemon_stats' (unused-argument)
-************* Module TP_tuc_examen.app.utils.utils
-app/utils/utils.py:1:0: C0114: Missing module docstring (missing-module-docstring)
-app/utils/utils.py:2:0: E0401: Unable to import 'app' (import-error)
-app/utils/utils.py:3:0: E0401: Unable to import 'app.sqlite' (import-error)
+> Ajouts fait:
+    - C0114 | C0115 | C0116: ajouts de docstring aux modules, class et fonctions
+    - R0903: ajouts de methodes (__repr__ ; to_dict ...)
+    - C0103: Mettre ma variable en majuscules
+    - C0304: Derniere ligne manquante
+    - E0401: Changement du chemin d'importation
+    - C0301: ligne trop longue
+    - C0103: Changement en variable conforme
 
 Avancement: 🔴
 
@@ -109,5 +74,4 @@ Groupe de 3
 > 80% de code couvert par vos tests
 
 Avancement: 🔴
-
 

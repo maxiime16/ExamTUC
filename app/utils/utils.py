@@ -1,11 +1,15 @@
+"""
+Module contenant des utilitaires pour l'application.
+"""
 from datetime import date
-from app import models
-from app.sqlite import SessionLocal, engine
+from ..sqlite import SessionLocal, engine
+from .. import models
+
 models.Base.metadata.create_all(bind=engine)
 
 def get_db():
     """
-        Get the DB
+    Obtenez la base de données.
     """
     database = SessionLocal()
     try:
@@ -13,11 +17,9 @@ def get_db():
     finally:
         database.close()
 
-
-
 def age_from_birthdate(birthdate):
     """
-        Return an age from a birthday
+    Retourne l'âge à partir de la date de naissance.
     """
     today = date.today()
     return today.year - birthdate.year - ((today.month, today.day)

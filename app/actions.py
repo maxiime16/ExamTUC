@@ -1,3 +1,6 @@
+"""
+Module contenant les fonctions d'action pour interagir avec la base de données.
+"""
 from sqlalchemy.orm import Session
 from . import models, schemas
 from .utils.pokeapi import get_pokemon_name
