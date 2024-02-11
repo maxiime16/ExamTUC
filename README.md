@@ -27,22 +27,27 @@ pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-prof
 Le combat : 
 Comparez chaque stats des 2 pokemons 1 par 1 (health vs health, attack vs attack, etc ..)
 Le Pokémon qui a le plus de stats supérieur gagne.
+Avancement: 🔴
 
 ### Locust
 Rédaction d'un scénario ( pertinent )
 Un exemple de test de performance à réaliser fourni via un .locust.conf.
+Avancement: 🟢
 
 ### Pylint
 Groupe de 3
 > Note minimal de 8/10
+Avancement: 🔴
 
 ### Unittest
 Groupe de 3
 5 tests unitaires
 3 tests unitaires mocks
+Avancement: 🔴
 
 ### Coverage
 Groupe de 3
 > 80% de code couvert par vos tests
+Avancement: 🔴
 
 
