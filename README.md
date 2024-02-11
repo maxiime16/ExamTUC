@@ -11,12 +11,13 @@
 pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy 
 ```
 
--> FastAPI
-    - ```uvicorn main:app --reload```
-    - ```http://127.0.0.1:8000/docs```
--> Locust
-    - ```locust -f <test_file.py>``` (ici locust -f tests/load_test.py)
-    - ```http://0.0.0.0:8089```
+> FastAPI
+- ```uvicorn main:app --reload```
+- ```http://127.0.0.1:8000/docs```
+
+> Locust
+- ```locust -f <test_file.py>``` (ici locust -f tests/load_test.py)
+- ```http://0.0.0.0:8089```
 
 
 ## choses a faire
