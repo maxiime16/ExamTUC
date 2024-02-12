@@ -5,19 +5,25 @@
 - Mathieu Cellier
 - Maxime Devillepoix
 
-## installation
-- pip install
+## Installation
+> pip install
 ```
-pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy 
+pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-profiling pylint sqlalchemy pydantic
 ```
-
+## Run
 > FastAPI
-- ```uvicorn main:app --reload```
-- ```http://127.0.0.1:8000/docs```
+ - ```uvicorn main:app --reload```
+ - ```http://127.0.0.1:8000/docs```
 
 > Locust
-- ```locust -f <test_file.py>``` (ici locust -f tests/load_test.py)
-- ```http://0.0.0.0:8089```
+ - ```locust -f <test_file.py>``` (ici locust -f tests/load_test.py)
+ - ```http://0.0.0.0:8089```
+
+> Pylint
+ - ```pylint app```
+ - coverage 
+    ```coverage run -m pytest tests/```
+    ```coverage report -m```
 
 
 ## choses a faire
@@ -28,7 +34,7 @@ Le combat :
 Comparez chaque stats des 2 pokemons 1 par 1 (health vs health, attack vs attack, etc ..)
 Le Pokémon qui a le plus de stats supérieur gagne.
 
-Avancement: 🔴
+Avancement: 🟢
 
 ### Locust
 Rédaction d'un scénario ( pertinent )
@@ -53,7 +59,7 @@ Groupe de 3
 
 > Ajouts fait:
  - C0114 | C0115 | C0116: ajouts de docstring aux modules, class et fonctions
- - R0903: ajouts de methodes (__repr__ ; to_dict ...)
+ - R0903: ajouts de methodes (```__repr__ ; to_dict ...```)
  - C0103: Mettre ma variable en majuscules
  - C0304: Derniere ligne manquante
  - E0401: Changement du chemin d'importation
@@ -64,8 +70,8 @@ Avancement: 🟢 note > 9.5
 
 ### Unittest
 Groupe de 3
-5 tests unitaires
-3 tests unitaires mocks
+5 tests unitaires: 0/5
+3 tests unitaires mocks 0/3
 
 Avancement: 🔴
 

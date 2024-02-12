@@ -40,13 +40,31 @@ def battle_pokemon(first_api_id, second_api_id):
     """
     first_pokemon = get_pokemon_data(first_api_id)
     second_pokemon = get_pokemon_data(second_api_id)
-    battle_result = 0
+
+    first_pokemon_stats = get_pokemon_stats(first_api_id)
+    second_pokemon_stats = get_pokemon_stats(second_api_id)
+
+    battle_result = battle_compare_stats(first_pokemon_stats, second_pokemon_stats)
+
     if battle_result > 0:
         return first_pokemon
     return second_pokemon if battle_result < 0 else {'winner': 'draw'}
 
 
-def battle_compare_stats(first_pokemon_stats=None, second_pokemon_stats=None):
+def battle_compare_stats(first_pokemon_stats, second_pokemon_stats):
     """
-    Comparer les statistiques données entre deux Pokémon.
+    Compare les statistiques données entre deux Pokémon.
+    
     """
+    resultat = 0
+    for i in range(6):
+        if first_pokemon_stats[i] > second_pokemon_stats[i]:
+            resultat += 1
+        if first_pokemon_stats[i] < second_pokemon_stats[i]:
+            resultat -= 1
+        else:
+            resultat += 0
+    return resultat
+
+print (battle_pokemon(25,150)['id'])
+print (get_pokemon_stats(10))
