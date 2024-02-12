@@ -1,19 +1,20 @@
+"""
+Ce module contient les tests mocks pour l'application.
+"""
 import unittest
 from unittest.mock import MagicMock, patch
 from sqlalchemy.orm import Session
-from app import actions, models, schemas
-from app.utils.pokeapi import get_pokemon_name
-from app.routers.items import *
-from app.routers.pokemons import *
-from app.routers.trainers import *
-from app import *
-
+from ..app import actions, models, schemas
 
 class TestActions(unittest.TestCase):
+    """Classe de tests pour les fonctions d'actions."""
+
     def setUp(self):
+        """Configurer les éléments communs pour chaque test."""
         self.database = MagicMock(spec=Session)
     
     def test_get_trainer(self):
+        """Teste la fonction get_trainer."""
         # Setup
         trainer_id = 1
         trainer = models.Trainer(id=trainer_id, name="Ash", birthdate="1990-01-01")
@@ -26,6 +27,7 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result, trainer)
 
     def test_get_trainer_by_name(self):
+        """Teste la fonction get_trainer_by_name."""
         # Setup
         name = "Ash"
         trainers = [models.Trainer(id=1, name=name, birthdate="1990-01-01")]
@@ -39,6 +41,7 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result[0].name, name)
 
     def test_get_trainers(self):
+        """Teste la fonction get_trainers."""
         # Setup
         trainers = [models.Trainer(id=1, name="Ash", birthdate="1990-01-01")]
         self.database.query.return_value.offset.return_value.limit.return_value.all.return_value = trainers
@@ -51,6 +54,7 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result[0].name, "Ash")
 
     def test_create_trainer(self):
+        """Teste la fonction create_trainer."""
         # Setup
         trainer_data = schemas.TrainerCreate(name="Ash", birthdate="1990-01-01")
         new_trainer = models.Trainer(id=1, name=trainer_data.name, birthdate=trainer_data.birthdate)
@@ -65,14 +69,10 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result.birthdate.isoformat(), "1990-01-01")
 
     def test_add_trainer_pokemon(self):
+        """Teste la fonction add_trainer_pokemon."""
         # Setup
         pokemon_data = schemas.PokemonCreate(api_id=25)
         trainer_id = 1
-        new_pokemon = models.Pokemon(
-            **pokemon_data.model_dump(),
-            name=get_pokemon_name(pokemon_data.api_id),
-            trainer_id=trainer_id
-        )
         actions.get_pokemon_name = MagicMock(return_value="Pikachu")
         self.database.add.return_value = None
         self.database.commit.return_value = None
@@ -86,14 +86,12 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result.name, "Pikachu")
         self.assertEqual(result.trainer_id, trainer_id)
 
+
     def test_add_trainer_item(self):
+        """Teste la fonction add_trainer_item."""
         # Setup
         item_data = schemas.ItemCreate(name="Potion", description="Restores 20 HP")
         trainer_id = 1
-        new_item = models.Item(
-            **item_data.model_dump(),
-            trainer_id=trainer_id
-        )
         self.database.add.return_value = None
         self.database.commit.return_value = None
         self.database.refresh.return_value = None
@@ -106,7 +104,9 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result.description, "Restores 20 HP")
         self.assertEqual(result.trainer_id, trainer_id)
 
+
     def test_get_items(self):
+        """Teste la fonction get_items."""
         # Setup
         items = [models.Item(id=1, name="Potion", description="Restores 20 HP", trainer_id=1)]
         self.database.query.return_value.offset.return_value.limit.return_value.all.return_value = items
@@ -120,6 +120,7 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result[0].description, "Restores 20 HP")
 
     def test_get_pokemon(self):
+        """Teste la fonction get_pokemon."""
         # Setup
         pokemon_id = 25
         pokemon = models.Pokemon(id=pokemon_id, api_id=25, name="Pikachu", trainer_id=1)
@@ -132,6 +133,7 @@ class TestActions(unittest.TestCase):
         self.assertEqual(result, pokemon)
 
     def test_get_pokemons(self):
+        """Teste la fonction get_pokemons."""
         # Setup
         pokemons = [models.Pokemon(id=1, api_id=25, name="Pikachu", trainer_id=1)]
         self.database.query.return_value.offset.return_value.limit.return_value.all.return_value = pokemons
