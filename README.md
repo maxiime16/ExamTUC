@@ -21,6 +21,7 @@ pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-prof
 
 > Pylint
  - ```pylint app```
+ 
  - Coverage 
     ```coverage run -m pytest tests/```
     ```coverage report -m```
@@ -28,14 +29,17 @@ pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-prof
 ## Changements fait:
 ### Code:
 > Création d'un endpoint qui permet de faire combattre 2 pokémons en fournissant leur ID
+
 > Comparez chaque stats des 2 pokemons 1 par 1
 
 ### Locust:
 > Scénario pertinant (voir .locust.conf.)
+
 > Exemple de test
 
 ### Pylint:
 > Note > 9.5
+
 > Changements du code:
  - Ajouts de docstring aux modules, class et fonctions
  - Ajouts de methodes
@@ -44,6 +48,7 @@ pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-prof
 
 ### Unittest:
 > Création de plusieurs tests unitaires (test_init.py)
+
 > Création de plusieurs tests unitaires mocks (test_mock.py)
 
 ### Coverage:
