@@ -2,7 +2,7 @@
 Ce module contient les tests mocks pour l'application.
 """
 import unittest
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock
 from sqlalchemy.orm import Session
 from ..app import actions, models, schemas
 
@@ -12,7 +12,7 @@ class TestActions(unittest.TestCase):
     def setUp(self):
         """Configurer les éléments communs pour chaque test."""
         self.database = MagicMock(spec=Session)
-    
+
     def test_get_trainer(self):
         """Teste la fonction get_trainer."""
         # Setup
@@ -63,7 +63,7 @@ class TestActions(unittest.TestCase):
         self.database.refresh.return_value = new_trainer
         # Test
         result = actions.create_trainer(self.database, trainer_data)
-    
+
         # Assertions
         self.assertEqual(result.name, "Ash")
         self.assertEqual(result.birthdate.isoformat(), "1990-01-01")

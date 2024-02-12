@@ -65,6 +65,3 @@ def battle_compare_stats(first_pokemon_stats, second_pokemon_stats):
         else:
             resultat += 0
     return resultat
-
-print (battle_pokemon(25,150)['id'])
-print (get_pokemon_stats(10))
