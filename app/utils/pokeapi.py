@@ -3,6 +3,7 @@ Module contenant des fonctions pour interagir avec l'API PokeAPI.
 """
 
 import requests
+import random
 
 BASE_URL = "https://pokeapi.co/api/v2"
 
@@ -38,17 +39,14 @@ def battle_pokemon(first_api_id, second_api_id):
     """
     Effectuer un combat entre deux Pokémon.
     """
-    first_pokemon = get_pokemon_data(first_api_id)
-    second_pokemon = get_pokemon_data(second_api_id)
-
     first_pokemon_stats = get_pokemon_stats(first_api_id)
     second_pokemon_stats = get_pokemon_stats(second_api_id)
 
     battle_result = battle_compare_stats(first_pokemon_stats, second_pokemon_stats)
 
     if battle_result > 0:
-        return first_pokemon
-    return second_pokemon if battle_result < 0 else {'winner': 'draw'}
+        return first_api_id
+    return second_api_id if battle_result < 0 else None
 
 
 def battle_compare_stats(first_pokemon_stats, second_pokemon_stats):
@@ -65,3 +63,13 @@ def battle_compare_stats(first_pokemon_stats, second_pokemon_stats):
         else:
             resultat += 0
     return resultat
+
+
+def get_random():
+    """
+    Récupère un Pokémon aléatoire depuis l'API PokeAPI.
+    """
+    random_pokemon_id = random.randint(1, 898)
+    random_pokemon_data = get_pokemon_data(random_pokemon_id)
+    
+    return random_pokemon_data

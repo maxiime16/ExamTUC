@@ -1,6 +1,5 @@
+from .app.routers import trainers, pokemons, items
 from fastapi import FastAPI
-from app.routers import trainers, pokemons, items
-
 
 app = FastAPI()
 

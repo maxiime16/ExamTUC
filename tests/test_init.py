@@ -40,9 +40,9 @@ class TestPokeAPI(unittest.TestCase):
 
     def test_battle_pokemon(self):
         """Teste la fonction battle_pokemon."""
-        self.assertEqual(battle_pokemon(self.api_id_1, self.api_id_2)['id'], 25)
-        self.assertEqual(battle_pokemon(self.api_id_3, self.api_id_2)['id'], 150)
-        self.assertEqual(battle_pokemon(self.api_id_1, self.api_id_1), {'winner': 'draw'})
+        self.assertEqual(battle_pokemon(self.api_id_1, self.api_id_2), 25)
+        self.assertEqual(battle_pokemon(self.api_id_3, self.api_id_2), 150)
+        self.assertEqual(battle_pokemon(self.api_id_1, self.api_id_1), None)
 
 
 class TestUtils(unittest.TestCase):
