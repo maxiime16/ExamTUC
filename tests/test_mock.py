@@ -5,6 +5,8 @@ import unittest
 from unittest.mock import MagicMock
 from sqlalchemy.orm import Session
 from ..app import actions, models, schemas
+from ..app.routers.pokemons import *
+
 
 class TestActions(unittest.TestCase):
     """Classe de tests pour les fonctions d'actions."""

@@ -23,7 +23,7 @@ pip install fastapi locust pytest uvicorn coverage httpx pytest-mock pytest-prof
  - ```pylint app```
 
 > Coverage 
-    ```coverage run -m pytest tests/```
+    ```coverage run -m pytest ```
     ```coverage report -m```
 
 ## Changements fait:
